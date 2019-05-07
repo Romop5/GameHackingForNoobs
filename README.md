@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://raw.githubusercontent.com/Romop5/GameHackingForNoobs/master/logo.svg" alt="Logo" /></a>
+    <img src="https://raw.githubusercontent.com/Romop5/GameHackingForNoobs/master/logo.png" alt="Logo" /></a>
 </div>
 
 **CAUTION !!! IN PROGRESS !!! STATUS: 1%**
