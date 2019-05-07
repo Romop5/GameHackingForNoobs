@@ -1,0 +1,10 @@
+<umdoc>
+    <set name="version" value="1.0"/>
+    <document>
+        <tableOfContents/>
+        <pageBreak/>
+        <md file="introduction.md"/>
+        <md file="most-common-assembly-instructions.md"/>
+        <md file="01-hack-turning-on-godmode.md"/>
+    </document>
+</umdoc>

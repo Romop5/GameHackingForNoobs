@@ -88,7 +88,7 @@ Stand for marked addresses which we can use for jumping and calling.
 
 Consider following programm:
 
-```asm
+```
 mov eax, 0xF
 cycle:
 dec eax

@@ -1,7 +1,11 @@
 # Introduction
-Welcome to Game Hacking for Noobs. 
-TODO: write more about what is going to be discussed here. 
-HINT: use README.md
+Welcome to Game Hacking for Noobs. This aim of this book is to give you a *really* brief
+introduction into an art of examining computer processes and more precisely, computer games.
+
+By reading this modest book you should
+* understand what computer programs are and how their run at our computers 
+* find variables in alien programs you are interested in 
+* create simple hacks
 
 # Architecture of computers
 Before we can start with examining applications such as computer games, we will need to understand
@@ -29,7 +33,7 @@ condition for iteration is valid - for example, **for**, **while** or **do while
     expression (sin(90 deg)*5.0 + 1.0) evaluates roughly to 6.
 
 The text state above can is demostrated in following C program: 
-
+```
     // this is a simple function which takes a single parameter N 
     int fibonnaci(int n)
     {
@@ -42,6 +46,7 @@ The text state above can is demostrated in following C program:
             return fibonnaci(n-1)+fibonnaci(n-2);
         }
     }
+```
 
 ## Stack vs heap
 While implementing an algorithm, one may not be certain about how much of data he will need to
@@ -81,7 +86,7 @@ Consider the example of calculating `fibonnaci` function. We have already seen i
 would a C function look like in CPU-instruction version ?
 
 Here is an example snippet in a pseudo-Assembly language:
-
+```
     # Beggining of fibonnaci
     fibonnaci:
     COMPARE n, 1
@@ -108,6 +113,7 @@ Here is an example snippet in a pseudo-Assembly language:
     zeroAndOneCase:
     MOVE returnValue, 1
     RETURN 
+```
 
 Please, note that I made up the names of instructions in order to make the example more concise.
 
