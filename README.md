@@ -1,4 +1,6 @@
-# Game Hacking for Noobs
+<div align="center">
+    <img src="https://raw.githubusercontent.com/Romop5/GameHackingForNoobs/master/logo.svg" alt="Logo" /></a>
+</div>
 
 **CAUTION !!! IN PROGRESS !!! STATUS: 1%**
 
