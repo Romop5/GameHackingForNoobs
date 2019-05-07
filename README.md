@@ -12,6 +12,15 @@ and modificating of program's resources such as RAM or raw code, so you can expe
 * to learn how to find patterns and usefull parts of program's code
 * to learn how to write a simple trainer in C++ and Microsoft Visual Studio
 
+The book itself is splitted into two parts - **theory** and **practise**.
+The provided theory should introduce you reveal what we are doing and why we are doing so.
+The practical tutorials will lead you through simple use-cases and will become you first attempts to
+hack game.
+
+
+## So, where's the book ?
+Just open **book.pdf**.
+
 ## How to get in contact
 
 Discord server: **MafiaHub**, opt for channel #**reverse-engineering**

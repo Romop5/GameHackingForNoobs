@@ -33,19 +33,19 @@ condition for iteration is valid - for example, **for**, **while** or **do while
     expression (sin(90 deg)*5.0 + 1.0) evaluates roughly to 6.
 
 The text state above can is demostrated in following C program: 
-```
-    // this is a simple function which takes a single parameter N 
-    int fibonnaci(int n)
-    {
-        // if N is lower than or equal to  1, return 1
-        if(n <= 1) // IF is a control-flow statement 
-            return 1; // return is just a statement which assigns return value
-        else {
-            // otherwise compute value as a sum of previous two elements of Fibbonaci series
-            // n-2 is an expression which computes a temporate value whis passed to fibonnaci function
-            return fibonnaci(n-1)+fibonnaci(n-2);
-        }
+```C++
+// this is a simple function which takes a single parameter N 
+int fibonnaci(int n)
+{
+    // if N is lower than or equal to  1, return 1
+    if(n <= 1) // IF is a control-flow statement 
+        return 1; // return is just a statement which assigns return value
+    else {
+        // otherwise compute value as a sum of previous two elements of Fibbonaci series
+        // n-2 is an expression which computes a temporate value whis passed to fibonnaci function
+        return fibonnaci(n-1)+fibonnaci(n-2);
     }
+}
 ```
 
 ## Stack vs heap
@@ -87,32 +87,32 @@ would a C function look like in CPU-instruction version ?
 
 Here is an example snippet in a pseudo-Assembly language:
 ```
-    # Beggining of fibonnaci
-    fibonnaci:
-    COMPARE n, 1
-    JUMP IF EQUAL zeroAndOneCase
-    # If JUMP is not taken, this section is executed
-    
-    # Store our current n argument
-    PUSH n 
-    # Execude n-1
-    SUBTRACT n, 1
-    # Call fibonnaci function with new argument n
-    CALL fibonnaci
-    ADD sum, returnValue 
-    # Get the original argument
-    POP n
-    # SUBTRACT n, 2
-    # Call fibonnaci function with new argument n
-    CALL fibonnaci
-    ADD sum, returnValue 
-    POP n
-    MOVE returnValue, sum
-    RETURN
-    # zeroAndOneCase section of code is only accessed using JUMP above
-    zeroAndOneCase:
-    MOVE returnValue, 1
-    RETURN 
+# Beggining of fibonnaci
+fibonnaci:
+COMPARE n, 1
+JUMP IF EQUAL zeroAndOneCase
+# If JUMP is not taken, this section is executed
+
+# Store our current n argument
+PUSH n 
+# Execude n-1
+SUBTRACT n, 1
+# Call fibonnaci function with new argument n
+CALL fibonnaci
+ADD sum, returnValue 
+# Get the original argument
+POP n
+# SUBTRACT n, 2
+# Call fibonnaci function with new argument n
+CALL fibonnaci
+ADD sum, returnValue 
+POP n
+MOVE returnValue, sum
+RETURN
+# zeroAndOneCase section of code is only accessed using JUMP above
+zeroAndOneCase:
+MOVE returnValue, 1
+RETURN 
 ```
 
 Please, note that I made up the names of instructions in order to make the example more concise.

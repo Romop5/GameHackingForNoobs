@@ -2,6 +2,11 @@
 
 #Use generate .tex
 ./generateTexUsingUmdoc.sh
+RETVAL=$?
+if [ $RETVAL -eq 1 ]
+then
+    exit 1
+fi 
 
 # Create .pdf
 pdflatex final.tex

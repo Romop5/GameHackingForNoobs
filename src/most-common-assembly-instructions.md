@@ -38,6 +38,11 @@ in **write back** stage.
 To sum it, processors process *instructions* to find out what should happens to data stored in *registers* and in RAM.
 
 ## Stack
+
+![Manipulation with stack: new values are pushed at the top, the stack grows into negative
+addresses. The address of the new top will be 47.](svgs/stack.pdf) {#svgexample-figure}
+
+
 To be honest with you, there is still something I haven't mentioned yet - stack.
 **Stack** is a range of addresses inside RAM, allocated for it. As the name says,
 this addresses are usually being manipulated in terms of *stacking* - new values
@@ -84,7 +89,7 @@ Pushes value onto stack. The stack address after completing
 
 ### label:
 Stand for marked addresses which we can use for jumping and calling.
-## Simple program
+## A simple program
 
 Consider following programm:
 
@@ -96,7 +101,7 @@ cmp eax, 0x0
 jne cycle
 end:
 ```
-We will examine the program function step-by-step.
+We will examine the program code step-by-step:
 
 ```
 mov eax, 0xF
