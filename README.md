@@ -23,12 +23,12 @@ hack game.
 
 ## So, where's the book ?
 Just open **book.pdf**.
-## How is the author
+## Who's the author
 
 Just a young student of IT university, who once in the past, together with his friends created a multiplayer modification for
 *Mafia: The City of Lost Heaven*, called **LH-MP**. 
 
-## How to get in contact
+## Getting in contact
 
 Discord server: **MafiaHub**, opt for channel #**reverse-engineering**
 
