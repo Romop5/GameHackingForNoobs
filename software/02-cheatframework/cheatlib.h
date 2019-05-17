@@ -20,12 +20,16 @@ class CheatGame
 
 		// Return handle
 		HANDLE getHandle() const { return this->m_processHandle.get();}
+
+		DWORD getProcessID() const { return this->processID; }
 	private:
 		// Handle, acquired using OpenProcess
 		AutomaticHandle m_processHandle;
 			
 		// Process ID
 		DWORD processID;
+
+		bool openProcessHandle(DWORD processID);
 };
 
 

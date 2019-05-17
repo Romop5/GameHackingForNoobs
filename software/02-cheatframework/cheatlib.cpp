@@ -99,12 +99,13 @@ bool CheatGame::bindToWindow(const std::string& windowName)
 bool CheatGame::bindToWindowContainingSubstring(const std::string& substring)
 {
 	this->processID = searchForProcessWithWindowsContainingSubstring(substring);
+	this->openProcessHandle(processID);
 	return (this->processID != NULL);
 }
 
 bool CheatGame::isBinded() const
 {
-	return (this->processID == 0);
+	return (this->processID != 0);
 }
 
 bool CheatGame::isRunning() const
@@ -112,6 +113,17 @@ bool CheatGame::isRunning() const
 	// TODO
 	return true;
 }
+
+bool CheatGame::openProcessHandle(DWORD processID)
+{
+	HANDLE processHandle = OpenProcess(PROCESS_VM_OPERATION | PROCESS_VM_WRITE, false, processID);
+	if(processHandle == NULL)
+		return false;
+	// Set handle
+	this->m_processHandle.set(processHandle);
+}
+
+
 
 /*
  * =======================================================
@@ -121,14 +133,14 @@ bool CheatGame::isRunning() const
 MemoryAccessor MemoryAccessor::getPointerValue(DWORD offset)
 {
 	DWORD newAddress = NULL;
-	this->native_read(&address, sizeof(DWORD));
+	this->native_read(&newAddress, sizeof(DWORD));
 	return MemoryAccessor(this->m_game, newAddress+offset);
 }
 
 bool MemoryAccessor::native_write(void* data, size_t sizeOfData) const
 {
 	auto processHandle = (this->m_game.getHandle());
-	if(processHandle != NULL)
+	if(processHandle == NULL)
 		return false;
 	SIZE_T readBytesCount = 0;
 	auto returnStatus = WriteProcessMemory(processHandle, reinterpret_cast<LPVOID>(this->m_address), data, sizeOfData, &readBytesCount);
@@ -141,7 +153,7 @@ bool MemoryAccessor::native_write(void* data, size_t sizeOfData) const
 bool MemoryAccessor::native_read(void* data, size_t sizeOfData) const
 {
 	auto processHandle = (this->m_game.getHandle());
-	if(processHandle != NULL)
+	if(processHandle == NULL)
 		return false;
 	SIZE_T readBytesCount = 0;
 	auto returnStatus = ReadProcessMemory(processHandle, reinterpret_cast<LPVOID>(this->m_address), data, sizeOfData, &readBytesCount);
